@@ -1,0 +1,27 @@
+﻿@page
+@model TP3_Travail_A_Faire.Pages.nDemmandeModel
+@{
+    ViewData["Title"] = "Nouvelle Demmande";
+}
+<form method="post">
+    <div class="form-group">
+        <label for="longueur">Longueur</label>
+        <input type="number" class="form-control" name="longueur" placeholder="12">
+    </div>
+    <div class="form-group">
+        <label for="largeur">Largeur</label>
+        <input type="number" class="form-control" name="largeur" placeholder="9">
+    </div>
+    <div class="form-group">
+        <label for="typeC">Type de couvre plancher</label>
+        <select class="form-control" name="typeC">
+            @foreach(var type in Model.typeDeCouvre())
+            {
+                <option value="@type">@type</option>
+            }
+        </select>
+    </div>
+    <br />
+    <input type="submit" value="Submit" class="submit" />
+
+</form>
